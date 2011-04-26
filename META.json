@@ -35,7 +35,7 @@
          }
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "mailto" : "bug-Dist-Zilla-PluginBundle-CJFIELDS@rt.cpan.org",
@@ -53,127 +53,127 @@
       "plugins" : [
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
-            "name" : "@FLORA/@Basic/GatherDir",
+            "name" : "@CJFIELDS/@Basic/GatherDir",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
-            "name" : "@FLORA/@Basic/PruneCruft",
+            "name" : "@CJFIELDS/@Basic/PruneCruft",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
-            "name" : "@FLORA/@Basic/ManifestSkip",
+            "name" : "@CJFIELDS/@Basic/ManifestSkip",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
-            "name" : "@FLORA/@Basic/MetaYAML",
+            "name" : "@CJFIELDS/@Basic/MetaYAML",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
-            "name" : "@FLORA/@Basic/License",
+            "name" : "@CJFIELDS/@Basic/License",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme",
-            "name" : "@FLORA/@Basic/Readme",
+            "name" : "@CJFIELDS/@Basic/Readme",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExtraTests",
-            "name" : "@FLORA/@Basic/ExtraTests",
+            "name" : "@CJFIELDS/@Basic/ExtraTests",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
-            "name" : "@FLORA/@Basic/ExecDir",
+            "name" : "@CJFIELDS/@Basic/ExecDir",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::ShareDir",
-            "name" : "@FLORA/@Basic/ShareDir",
+            "name" : "@CJFIELDS/@Basic/ShareDir",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker",
-            "name" : "@FLORA/@Basic/MakeMaker",
+            "name" : "@CJFIELDS/@Basic/MakeMaker",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
-            "name" : "@FLORA/@Basic/Manifest",
+            "name" : "@CJFIELDS/@Basic/Manifest",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
-            "name" : "@FLORA/@Basic/TestRelease",
+            "name" : "@CJFIELDS/@Basic/TestRelease",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
-            "name" : "@FLORA/@Basic/ConfirmRelease",
+            "name" : "@CJFIELDS/@Basic/ConfirmRelease",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
-            "name" : "@FLORA/@Basic/UploadToCPAN",
+            "name" : "@CJFIELDS/@Basic/UploadToCPAN",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
-            "name" : "@FLORA/MetaConfig",
+            "name" : "@CJFIELDS/MetaConfig",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
-            "name" : "@FLORA/MetaJSON",
+            "name" : "@CJFIELDS/MetaJSON",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
-            "name" : "@FLORA/PkgVersion",
+            "name" : "@CJFIELDS/PkgVersion",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
-            "name" : "@FLORA/PodSyntaxTests",
+            "name" : "@CJFIELDS/PodSyntaxTests",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::NoTabsTests",
-            "name" : "@FLORA/NoTabsTests",
+            "name" : "@CJFIELDS/NoTabsTests",
             "version" : "0.01"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodCoverageTests",
-            "name" : "@FLORA/PodCoverageTests",
+            "name" : "@CJFIELDS/PodCoverageTests",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaResources",
-            "name" : "@FLORA/MetaResources",
+            "name" : "@CJFIELDS/MetaResources",
             "version" : "4.200005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
-            "name" : "@FLORA/Authority",
+            "name" : "@CJFIELDS/Authority",
             "version" : "1.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::EOLTests",
-            "name" : "@FLORA/EOLTests",
+            "name" : "@CJFIELDS/EOLTests",
             "version" : "0.02"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodWeaver",
-            "name" : "@FLORA/PodWeaver",
+            "name" : "@CJFIELDS/PodWeaver",
             "version" : "3.101641"
          },
          {
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
-            "name" : "@FLORA/AutoPrereqs",
+            "name" : "@CJFIELDS/AutoPrereqs",
             "version" : "4.200005"
          },
          {
@@ -216,7 +216,7 @@
       "zilla" : {
          "class" : "Dist::Zilla::Dist::Builder",
          "config" : {
-            "is_trial" : 1
+            "is_trial" : 0
          },
          "version" : "4.200005"
       }

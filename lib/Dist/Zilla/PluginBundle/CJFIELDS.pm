@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::CJFIELDS::AUTHORITY = 'cpan::CJFIELDS';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.01'; # TRIAL
+  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.01';
 }
 
 # ABSTRACT: Build your modules like CJFIELDS
