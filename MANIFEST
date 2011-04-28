@@ -1,9 +1,10 @@
+Build.PL
 Changes
+Changes~
 LICENSE
 MANIFEST
 META.json
 META.yml
-Makefile.PL
 README
 dist.ini
 lib/Dist/Zilla/PluginBundle/CJFIELDS.pm

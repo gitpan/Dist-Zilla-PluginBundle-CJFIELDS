@@ -1,48 +1,91 @@
 package Dist::Zilla::PluginBundle::CJFIELDS;
 BEGIN {
-  $Dist::Zilla::PluginBundle::CJFIELDS::AUTHORITY = 'cpan::CJFIELDS';
+  $Dist::Zilla::PluginBundle::CJFIELDS::AUTHORITY = 'cpan:CJFIELDS';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.01';
+  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.02';
 }
 
 # ABSTRACT: Build your modules like CJFIELDS
 
-use Moose 2.0;
+use Moose 1.0;
+use Moose::Util::TypeConstraints;
+use MooseX::Types::Moose qw(Bool Str ArrayRef);
 use namespace::autoclean;
-
-# for now this just extends FLORA's PluginBundle, but I'll likely strip this
-# down for my own purposes
 
 extends qw(Dist::Zilla::PluginBundle::FLORA);
 
-has '+authority'    => (default => 'cpan:CJFIELDS');
+has '+authority'    => ( default     => 'cpan:CJFIELDS');
 
-has '+github_user'  => ( default => 'cjfields');
+has '+github_user'  => ( default     => 'cjfields' );
+
+has 'create_readme' => (
+    isa         => Bool,
+    is          => 'ro',
+    default     => 1
+);
+
+has 'use_module_build'  => (
+    isa         => Bool,
+    is          => 'ro',
+    default     => 1
+);
+
+has 'use_next_release'  => (
+    isa         => Bool,
+    is          => 'ro',
+    default     => 1
+);
+
+override 'configure' => sub {
+    my $self = shift;
+
+    my @filtered;
+    push @filtered, 'Readme' if !$self->create_readme;
+    push @filtered, 'MakeMaker' if $self->use_module_build;
+
+    if (@filtered) {
+        $self->add_bundle('@Filter' => {-bundle   => '@Basic',
+                                        -remove   => \@filtered});
+    } else {
+        $self->add_bundle('@Basic');
+    }
+
+    $self->add_plugins(qw(
+                       MetaConfig
+                       MetaJSON
+                       PkgVersion
+                       PodSyntaxTests
+                       NoTabsTests
+                       CompileTests
+                       ))
+                       ;
+
+    $self->add_plugins(
+        [MetaResources => {
+            'repository.type'   => $self->repository_type,
+            'repository.url'    => $self->repository_url,
+            'repository.web'    => $self->repository_web,
+            'bugtracker.web'    => $self->bugtracker_url,
+            'bugtracker.mailto' => $self->bugtracker_email,
+            'homepage'          => $self->homepage_url,
+        }],
+        [Authority => {
+            authority   => $self->authority,
+            do_metadata => 1,
+        }],
+        [EOLTests => {
+            trailing_whitespace => 1,
+        }],
+    );
+
+    $self->add_plugins('ModuleBuild') if $self->use_module_build;
+    $self->add_plugins('PodCoverageTests') if !$self->disable_pod_coverage_tests;
+    $self->add_plugins('NextRelease') if $self->use_next_release;
+
+    $self->add_plugins('AutoPrereqs') if $self->auto_prereqs;
+};
 
 __PACKAGE__->meta->make_immutable;
 
 1;
-
-__END__
-=pod
-
-=encoding utf-8
-
-=head1 NAME
-
-Dist::Zilla::PluginBundle::CJFIELDS - Build your modules like CJFIELDS
-
-=head1 AUTHOR
-
-Chris Fields <cjfields@bioperl.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by Chris Fields.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-

@@ -5,11 +5,12 @@ author:
 build_requires:
   File::Find: 0
   File::Temp: 0
+  Module::Build: 0.3601
   Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
+  Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200005, CPAN::Meta::Converter version 2.110580'
+generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110580'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,115 +19,121 @@ name: Dist-Zilla-PluginBundle-CJFIELDS
 requires:
   Dist::Zilla::Plugin::CompileTests: 0
   Dist::Zilla::PluginBundle::FLORA: 0
-  Moose: 2.0
+  Moose: 1.0
+  Moose::Util::TypeConstraints: 0
+  MooseX::Types::Moose: 0
   namespace::autoclean: 0
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-CJFIELDS
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-CJFIELDS
   repository: git://github.com/cjfields/dist-zilla-pluginbundle-cjfields.git
-version: 0.01
+version: 0.02
 x_Dist_Zilla:
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
-      name: '@CJFIELDS/@Basic/GatherDir'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/GatherDir'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::PruneCruft
-      name: '@CJFIELDS/@Basic/PruneCruft'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/PruneCruft'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::ManifestSkip
-      name: '@CJFIELDS/@Basic/ManifestSkip'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/ManifestSkip'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::MetaYAML
-      name: '@CJFIELDS/@Basic/MetaYAML'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/MetaYAML'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::License
-      name: '@CJFIELDS/@Basic/License'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/License'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::Readme
-      name: '@CJFIELDS/@Basic/Readme'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/Readme'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::ExtraTests
-      name: '@CJFIELDS/@Basic/ExtraTests'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/ExtraTests'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::ExecDir
-      name: '@CJFIELDS/@Basic/ExecDir'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/ExecDir'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::ShareDir
-      name: '@CJFIELDS/@Basic/ShareDir'
-      version: 4.200005
-    -
-      class: Dist::Zilla::Plugin::MakeMaker
-      name: '@CJFIELDS/@Basic/MakeMaker'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/ShareDir'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::Manifest
-      name: '@CJFIELDS/@Basic/Manifest'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/Manifest'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::TestRelease
-      name: '@CJFIELDS/@Basic/TestRelease'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/TestRelease'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
-      name: '@CJFIELDS/@Basic/ConfirmRelease'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/ConfirmRelease'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
-      name: '@CJFIELDS/@Basic/UploadToCPAN'
-      version: 4.200005
+      name: '@CJFIELDS/@Filter/UploadToCPAN'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@CJFIELDS/MetaConfig'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@CJFIELDS/MetaJSON'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::PkgVersion
       name: '@CJFIELDS/PkgVersion'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
       name: '@CJFIELDS/PodSyntaxTests'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::NoTabsTests
       name: '@CJFIELDS/NoTabsTests'
       version: 0.01
     -
-      class: Dist::Zilla::Plugin::PodCoverageTests
-      name: '@CJFIELDS/PodCoverageTests'
-      version: 4.200005
+      class: Dist::Zilla::Plugin::CompileTests
+      name: '@CJFIELDS/CompileTests'
+      version: 1.110930
     -
       class: Dist::Zilla::Plugin::MetaResources
       name: '@CJFIELDS/MetaResources'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@CJFIELDS/Authority'
-      version: 1.005
+      version: 1.004
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@CJFIELDS/EOLTests'
       version: 0.02
     -
-      class: Dist::Zilla::Plugin::PodWeaver
-      name: '@CJFIELDS/PodWeaver'
-      version: 3.101641
+      class: Dist::Zilla::Plugin::ModuleBuild
+      name: '@CJFIELDS/ModuleBuild'
+      version: 4.200004
+    -
+      class: Dist::Zilla::Plugin::PodCoverageTests
+      name: '@CJFIELDS/PodCoverageTests'
+      version: 4.200004
+    -
+      class: Dist::Zilla::Plugin::NextRelease
+      name: '@CJFIELDS/NextRelease'
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@CJFIELDS/AutoPrereqs'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -134,30 +141,26 @@ x_Dist_Zilla:
           phase: runtime
           type: requires
       name: Prereqs
-      version: 4.200005
-    -
-      class: Dist::Zilla::Plugin::CompileTests
-      name: CompileTests
-      version: 1.110930
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':TestFiles'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ExecFiles'
-      version: 4.200005
+      version: 4.200004
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ShareFiles'
-      version: 4.200005
+      version: 4.200004
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: 0
-    version: 4.200005
-x_authority: cpan::CJFIELDS
+    version: 4.200004
+x_authority: cpan:CJFIELDS
