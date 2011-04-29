@@ -1,11 +1,13 @@
 Build.PL
 Changes
+Changes~
 LICENSE
 MANIFEST
 META.json
 META.yml
 README
 dist.ini
+dist.ini~
 lib/Dist/Zilla/PluginBundle/CJFIELDS.pm
 t/00-compile.t
 t/release-eol.t

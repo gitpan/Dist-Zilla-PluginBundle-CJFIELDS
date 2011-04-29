@@ -44,7 +44,7 @@
          "web" : "http://github.com/cjfields/dist-zilla-pluginbundle-cjfields"
       }
    },
-   "version" : "0.03",
+   "version" : "0.0301",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

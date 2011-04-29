@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::CJFIELDS::AUTHORITY = 'cpan:CJFIELDS';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.03';
+  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.0301';
 }
 
 # ABSTRACT: Build your modules like CJFIELDS (not sure that's a recommendation)
@@ -40,7 +40,7 @@ has 'create_readme' => (
     trigger     => sub {
         my ($self, $val) = @_;
         if (!$val) {
-            $self->_set_filter_plugin('Readme');
+            $self->_set_filter_plugin('Readme',1);
         }
         $val
     }

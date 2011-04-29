@@ -17,7 +17,7 @@ my %module_build_args = (
     'Chris Fields <cjfields@bioperl.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-CJFIELDS',
-  'dist_version' => '0.03',
+  'dist_version' => '0.0301',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::CJFIELDS',
   'recommends' => {},
