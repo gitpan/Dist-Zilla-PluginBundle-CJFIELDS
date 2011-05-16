@@ -17,13 +17,14 @@ my %module_build_args = (
     'Chris Fields <cjfields@bioperl.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-CJFIELDS',
-  'dist_version' => '0.0301',
+  'dist_version' => '0.04',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::CJFIELDS',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {
     'Dist::Zilla::Plugin::CompileTests' => '0',
+    'Dist::Zilla::Plugin::ModuleBuild::Custom' => '0',
     'Dist::Zilla::PluginBundle::FLORA' => '0'
   },
   'script_files' => []

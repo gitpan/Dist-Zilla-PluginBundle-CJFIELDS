@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::CJFIELDS::AUTHORITY = 'cpan:CJFIELDS';
 }
 BEGIN {
-  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.0301';
+  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.04';
 }
 
 # ABSTRACT: Build your modules like CJFIELDS (not sure that's a recommendation)
@@ -14,6 +14,7 @@ use MooseX::Types::Moose qw(Bool Str HashRef Any);
 use namespace::autoclean;
 
 extends qw(Dist::Zilla::PluginBundle::FLORA);
+
 
 sub BUILD {
     my $self = shift;
@@ -40,7 +41,7 @@ has 'create_readme' => (
     trigger     => sub {
         my ($self, $val) = @_;
         if (!$val) {
-            $self->_set_filter_plugin('Readme',1);
+            $self->_set_filter_plugin('Readme' => 1);
         }
         $val
     }
@@ -51,15 +52,15 @@ has 'use_module_build'  => (
     is          => 'ro',
     default     => sub {
         my $self = shift;
-        $self->_set_filter_plugin('MakeMaker', 1);
-        $self->_set_config_plugin('ModuleBuild',{});
+        $self->_set_filter_plugin('MakeMaker' =>  1);
+        $self->_set_config_plugin('ModuleBuild' => {});
         1;
     },
     trigger     => sub {
         my ($self, $val) = @_;
         if ($val) {
-            $self->_set_filter_plugin('MakeMaker',1);
-            $self->_set_config_plugin('ModuleBuild',{});
+            $self->_set_filter_plugin('MakeMaker' => 1);
+            $self->_set_config_plugin('ModuleBuild' => {});
         }
         $val
     }
@@ -81,12 +82,13 @@ has 'skip_build'  => (
     isa         => Bool,
     is          => 'ro',
     default     => 0,
-    lazy        => 1,
     trigger     => sub {
         my ($self, $val) = @_;
+        Carp::croak("Can't set both skip_build and use_module_build")
+            if $self->use_module_build;
         if ($val) {
-            Carp::croak() if $self->use_module_build;
-            $self->_set_filter_plugin('MakeMaker',1);
+            $self->_set_filter_plugin('MakeMaker' => 1, 'ModuleBuild' => 1);
+            $self->_set_config_plugin('ModuleBuild::Custom' => {} );
         }
         $val
     }
@@ -116,9 +118,6 @@ has '_plugins_added' => (
 
 override 'configure' => sub {
     my $self = shift;
-
-    Carp::croak("Can't set both skip_build and use_module_build")
-        if $self->skip_build && $self->use_module_build;
 
     # these need to be moved into a trigger or builder or somethin'
     my @filtered = $self->_filtered_plugins;
@@ -177,6 +176,19 @@ __END__
 =head1 NAME
 
 Dist::Zilla::PluginBundle::CJFIELDS - Build your modules like CJFIELDS (not sure that's a recommendation)
+
+=head1 SYNOPSIS
+
+In dist.ini:
+
+  [@CJFIELDS]
+  dist = My-Dist-Name
+  repository_at = github
+
+=head1 DESCRIPTION
+
+This is the L<Dist::Zilla> configuration I use to build my distributions, not
+that I would recommend that.
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@ author  = Chris Fields <cjfields@bioperl.org>
 license = Perl_5
 copyright_holder = Chris Fields
 copyright_year   = 2011
-version = 0.03
+version = 0.0301
 
 [@CJFIELDS]
 dist = Dist-Zilla-PluginBundle-CJFIELDS
@@ -12,3 +12,4 @@ repository_at = github
 [Prereqs]
 Dist::Zilla::PluginBundle::FLORA = 0
 Dist::Zilla::Plugin::CompileTests = 0
+Dist::Zilla::Plugin::ModuleBuild::Custom = 0
