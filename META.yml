@@ -15,13 +15,14 @@ meta-spec:
 name: Dist-Zilla-PluginBundle-CJFIELDS
 requires:
   Dist::Zilla::Plugin::ModuleBuild::Custom: 0
+  Dist::Zilla::Plugin::OurPkgVersion: 0
   Dist::Zilla::Plugin::Test::Compile: 0
   Dist::Zilla::PluginBundle::FLORA: 0
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-CJFIELDS
   homepage: http://metacpan.org/release/Dist-Zilla-PluginBundle-CJFIELDS
   repository: git://github.com/cjfields/dist-zilla-pluginbundle-cjfields.git
-version: 0.05
+version: 0.06
 x_Dist_Zilla:
   plugins:
     -
@@ -89,9 +90,9 @@ x_Dist_Zilla:
       name: '@CJFIELDS/MetaJSON'
       version: 4.300006
     -
-      class: Dist::Zilla::Plugin::PkgVersion
-      name: '@CJFIELDS/PkgVersion'
-      version: 4.300006
+      class: Dist::Zilla::Plugin::OurPkgVersion
+      name: '@CJFIELDS/OurPkgVersion'
+      version: 0.003002
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@CJFIELDS/MetaConfig'

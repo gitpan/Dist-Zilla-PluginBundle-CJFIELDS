@@ -27,6 +27,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::Plugin::ModuleBuild::Custom" : 0,
+            "Dist::Zilla::Plugin::OurPkgVersion" : 0,
             "Dist::Zilla::Plugin::Test::Compile" : 0,
             "Dist::Zilla::PluginBundle::FLORA" : 0
          }
@@ -45,7 +46,7 @@
          "web" : "http://github.com/cjfields/dist-zilla-pluginbundle-cjfields"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -129,9 +130,9 @@
             "version" : "4.300006"
          },
          {
-            "class" : "Dist::Zilla::Plugin::PkgVersion",
-            "name" : "@CJFIELDS/PkgVersion",
-            "version" : "4.300006"
+            "class" : "Dist::Zilla::Plugin::OurPkgVersion",
+            "name" : "@CJFIELDS/OurPkgVersion",
+            "version" : "0.003002"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
