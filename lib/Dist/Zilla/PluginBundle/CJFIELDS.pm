@@ -2,8 +2,8 @@ package Dist::Zilla::PluginBundle::CJFIELDS;
 BEGIN {
   $Dist::Zilla::PluginBundle::CJFIELDS::AUTHORITY = 'cpan:CJFIELDS';
 }
-BEGIN {
-  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.04';
+{
+  $Dist::Zilla::PluginBundle::CJFIELDS::VERSION = '0.05';
 }
 
 # ABSTRACT: Build your modules like CJFIELDS (not sure that's a recommendation)
@@ -24,7 +24,7 @@ sub BUILD {
         PkgVersion
         PodSyntaxTests
         NoTabsTests
-        CompileTests
+        Test::Compile
         NextRelease
         )
     );
